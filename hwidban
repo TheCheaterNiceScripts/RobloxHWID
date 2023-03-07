@@ -1,0 +1,45 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+OrionLib:MakeNotification({
+	Name = "Script Loaded",
+	Content = "Get The Key System",
+	Image = "rbxassetid://4483345998",
+	Time = 85
+})
+
+_G.Key = "5445_TheCheaterGeneratedKey_27825245"
+_G.KeyInput = "5445_TheCheaterGeneratedKey_27825245"
+
+function MakeScriptHub()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/TheCheaterNiceScripts/RobloxBanIPScript/main/toggle", true))()
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key System",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Key Here!",
+	Default = "Here Key",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+                MakeScriptHub()
+                end
+           end
+})
+
+
+
+ 
